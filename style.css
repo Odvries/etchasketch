@@ -6,7 +6,7 @@ body {
 }
 #maincontainer {
     display: flex;
-    flex-direction: row;
+    /*flex-direction: row;*/
     flex-wrap: wrap;
     align-content: center;
     width: 1024px;

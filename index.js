@@ -20,21 +20,22 @@ function newGrid() {
             alert("Enter a number between 1 and 100");
     } while (!validInput);
     removeGrid(dContainer);
-    createGrid(newGridSize,1024/newGridSize,1024/newGridSize);    
+    let newSize = Math.floor(1024/newGridSize)
+    createGrid(newGridSize,newSize);    
 }
 
-function addDiv(parentElement,newHeight,newWidth) {
+function addDiv(parentElement,divSize) {
     const newDiv = document.createElement("div");
-    newDiv.setAttribute("style", `flex: 1; min-height:${newHeight}px ; min-width:${newWidth}px`);
+    newDiv.setAttribute("style", `flex: 1; min-height:${divSize}px ; min-width:${divSize}px`);
     newDiv.addEventListener("mouseenter", function(){
         newDiv.style.backgroundColor = "red";
     });
     parentElement.appendChild(newDiv);
 }
 
-function createGrid(gridSize,divHeight,divWidth) {
+function createGrid(gridSize,divSize) {
     for (let i=0; i<gridSize*gridSize; i++) {
-        addDiv(dContainer,divHeight,divWidth);
+        addDiv(dContainer,divSize);
     }
 }
 
