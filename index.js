@@ -1,7 +1,6 @@
 
-const INITIAL_SIZE = 16;
-const INITIAL_WIDTH = 64;
-const INITIAL_HEIGHT = 64;
+const INITIAL_GRID_SIZE = 16;
+const INITIAL_DIV_SIZE = 64;
 const dContainer = document.querySelector("#maincontainer");
 const bNewGrid = document.querySelector("#newgrid");
 
@@ -45,6 +44,6 @@ function removeGrid(parentElement) {
     }
 }
 
-createGrid(INITIAL_SIZE,INITIAL_HEIGHT,INITIAL_WIDTH);
+createGrid(INITIAL_GRID_SIZE, INITIAL_DIV_SIZE);
 
 // eof
