@@ -25,9 +25,12 @@ function newGrid() {
 
 function addDiv(parentElement,divSize) {
     const newDiv = document.createElement("div");
-    newDiv.setAttribute("style", `flex: 1; min-height:${divSize}px ; min-width:${divSize}px`);
+    newDiv.setAttribute("style", `flex: 1; min-height:${divSize}px ; min-width:${divSize}px; opacity:0`);
     newDiv.addEventListener("mouseenter", function(){
-        newDiv.style.backgroundColor = "red";
+        newDiv.style.backgroundColor = `rgb(${Math.floor((Math.random() * 255) + 1)} ${Math.floor((Math.random() * 255) + 1)} ${Math.floor((Math.random() * 255) + 1)})`;
+        //newDiv.style.backgroundColor = 'red';
+        const currentOpacity = Number(newDiv.style.opacity);
+        newDiv.style.opacity = `${currentOpacity>=0.9?1:(currentOpacity + 0.1)}` ;
     });
     parentElement.appendChild(newDiv);
 }
